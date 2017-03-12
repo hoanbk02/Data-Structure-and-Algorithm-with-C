@@ -7,9 +7,14 @@
 //
 
 #include <stdio.h>
+#include "LinkedLists.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    printf("Hello, World!\n");
+    printf("Hello, This is Demontration Program with Linked List\n");
+    
+    ListNode *head = create_random_list(5);
+    traversing_list(head);
+    
     return 0;
 }

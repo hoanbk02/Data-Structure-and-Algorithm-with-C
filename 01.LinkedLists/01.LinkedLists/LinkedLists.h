@@ -17,5 +17,11 @@ typedef struct Node{
     struct Node * next;
 } ListNode;
 
+ListNode * create_random_list(int);
+void traversing_list(ListNode *);
+int list_length(ListNode *);
+ListNode * insert_in_list(ListNode *, int, int);
+int delete_from_list(ListNode *, int);
+void delete_list(ListNode *);
 
 #endif /* LinkedLists_h */

@@ -6,7 +6,22 @@
 //  Copyright © 2017 mixmex. All rights reserved.
 //
 
+#include <time.h>
 #include "LinkedLists.h"
+
+// Function traversing_list
+// Input: Head Node of List
+// Output: void
+void traversing_list(ListNode * head){
+    ListNode *currNode = head;
+    int position = 1;
+    while (currNode != NULL) {
+        printf("Node %d: %d \n", position, currNode->data);
+        position++;
+        currNode = currNode->next;
+    }
+}
+
 
 // Function list_length
 // Input: Head Node of List
@@ -26,42 +41,55 @@ int list_length(ListNode *head){
 // Function insert_in_list
 // Input: Head Node of list, Data and where it insert
 // Output: 1 -> Success, 0 -> Fail
-int insert_in_list(ListNode *head, int data, int position){
+ListNode * insert_in_list(ListNode *head, int data, int position){
     if (position > list_length(head) + 1) {
-        printf("Position > Length of List");
-        return 0;
+        printf("Position > Length of List\n");
     }else{
         int k = 1;
         ListNode *p, *q = NULL, *newNode;
         newNode = (ListNode *) malloc(sizeof(ListNode));
         
-        if (!newNode) {
+        if (newNode == NULL) {
             printf("Memory Error");
-            return 0;
-        }
-        
-        newNode->data = data;
-        p = head;
-        if (position == 1) {
-            newNode->next = p;
-            head = newNode;
         }else{
-            while ((p != NULL) && (k < position-1)) {
-                k++;
-                q = p;
-                p = p->next;
-            }
-            if (p == NULL) {
-                q->next = newNode;
-                newNode->next = NULL;
-            }else{
-                q->next = newNode;
+            newNode->data = data;
+            p = head;
+            if (position == 1) {
                 newNode->next = p;
+                head = newNode;
+            }else{
+                while ((p != NULL) && (k < position)) {
+                    k++;
+                    q = p;
+                    p = p->next;
+                }
+                if (p == NULL) {
+                    q->next = newNode;
+                    newNode->next = NULL;
+                }else{
+                    q->next = newNode;
+                    newNode->next = p;
+                }
             }
         }
-        
-        return 1;
     }
+    return head;
+}
+
+// Function create_random_list
+// Input: Number node in list
+// Output: Head Node of list
+ListNode * create_random_list(int number_node){
+    ListNode *head = NULL;
+    int i = 1;
+    
+    while (i <= number_node) {
+        int data = rand()%1000;
+        head = insert_in_list(head, data, i);
+        i++;
+    }
+    
+    return head;
 }
 
 
