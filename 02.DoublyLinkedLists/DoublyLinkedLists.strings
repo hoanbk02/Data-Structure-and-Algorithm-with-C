@@ -1,0 +1,19 @@
+/* 
+  DoublyLinkedLists.strings
+  02.DoublyLinkedLists
+
+  Created by mixmex on 3/12/17.
+  Copyright © 2017 mixmex. All rights reserved.
+*/
+ADT Doubly Linked List (Tạm dịch: Danh sách liên kết đôi)
+
+Advantage of a doubly linked list:
+    - Can navigate in both directions
+Disadvantages of boubly linked list:
+    - Each node requires an extra pointer, requiring more space
+    - The insertion or deletion of a node takes a bit longer
+
+Basic Operation:
+    - Traversing the list
+    - Insert an item in the list
+    - Deleting an item form the list
