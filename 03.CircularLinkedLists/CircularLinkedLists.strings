@@ -1,0 +1,23 @@
+/* 
+  CircularLinkedLists.strings
+  03.CircularLinkedLists
+
+  Created by mixmex on 3/27/17.
+  Copyright © 2017 mixmex. All rights reserved.
+*/
+
+ADT Circular Linked List (Tạm dịch: Danh sách liên kết vòng)
+
+Application of Circular List:
+- Used in managing the computing resources of a computer.
+- Implementing stacks and queues
+
+Basic Operation:
+- Counting Nodes in a Circular List
+- Printing the contents of a circular list
+- Inserting a Node
+    * at the End
+    * at the Front
+- Delete
+    * the Last Node
+    * the first Node
